@@ -1,0 +1,9 @@
+<stack>
+  <description brief="ros_pandora_platform_specific">ros_pandora_platform_specific</description>
+  <author>Maintained by Miltiadis Allamanis</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ros_pandora_platform_specific</url>
+  <depend stack="ros" />
+
+</stack>
