@@ -1,0 +1,17 @@
+<package>
+  <description brief="gmock">
+
+     gmock
+
+  </description>
+  <author>Miltiadis Allamanis</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/gmock</url>
+  <depend package="roscpp"/>
+	<export>
+    <cpp cflags="-I${prefix}/include  -I${prefix}/gtest/include" lflags="-L${prefix}/include -L${prefix}/lib"/>
+  </export>
+</package>
+
+
