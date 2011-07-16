@@ -1,0 +1,4 @@
+<!--Watchdog Monitor -->
+<launch>
+  <node name="watchdog" type="wdtMonitor" pkg="watchdog" respawn="true" />
+</launch>
