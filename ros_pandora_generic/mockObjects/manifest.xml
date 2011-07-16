@@ -1,0 +1,22 @@
+<package>
+  <description brief="mockObjects">
+		
+     Mock objects for representing subscribers, service servers and action libs, used for testing.
+
+  </description>
+  <author>Miltiadis Allamanis, Marina Stamatiadou, Pelagia Sykoudi</author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/mockObjects</url>
+  <depend package="roscpp"/>
+  <depend package="gmock"/>  
+  <depend package="actionlib"/> 
+  <depend package="actionlib_msgs"/>  
+  
+   <export>
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -llibgmock -llibgtest"/>
+  </export>
+
+</package>
+
+

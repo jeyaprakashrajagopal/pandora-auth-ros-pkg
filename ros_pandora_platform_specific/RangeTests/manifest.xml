@@ -1,0 +1,24 @@
+<package>
+  <description brief="RangeTests">
+
+     Range Tests Specific for the PANDORA
+
+  </description>
+  <author>Stamatiadou Marina</author>
+  <license>GPL</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+  <depend package="roscpp"/>
+  <depend package="dataFusion_communications"/>
+  <depend package="vision_communications"/>
+  <depend package="controllersAndSensors_communications"/>
+  <depend package="slam_communications"/>
+  <depend package="mainMotorControl_communications"/>
+  <depend package="RoboticArm_communications"/>
+  <depend package="mockObjects"/>
+  <depend package="std_msgs"/>
+  <depend package="tf"/>
+
+</package>
+
+
