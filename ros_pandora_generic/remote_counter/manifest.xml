@@ -1,0 +1,15 @@
+<package>
+  <description brief="remote_counter">
+		A simple implementation of remote counters.
+
+  </description>
+  <author>Marina Stamadiadou, Miltiadis Allamanis</author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/remote_counter</url>
+  <depend package="roscpp"/>
+  <depend package="diagnostic_updater"/>
+
+</package>
+
+
