@@ -1,0 +1,9 @@
+#include "remote_mutex/MutexGuard.h"
+
+int main(int argc, char** argv) {
+	std::string name = "mutex";
+	name += argv[1];
+	ros::init(argc,argv,name);	
+	MutexGuard g(argv[1]);
+	ros::spin();
+}
