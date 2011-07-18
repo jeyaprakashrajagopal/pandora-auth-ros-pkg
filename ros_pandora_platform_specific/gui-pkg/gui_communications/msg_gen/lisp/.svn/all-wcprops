@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/pandorasvn/!svn/ver/1374/ros/gui_communications/msg_gen/lisp
+END
+_package.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/pandorasvn/!svn/ver/1374/ros/gui_communications/msg_gen/lisp/_package.lisp
+END
+targetPosition.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/pandorasvn/!svn/ver/1374/ros/gui_communications/msg_gen/lisp/targetPosition.lisp
+END
+gui_communications-msg.asd
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/pandorasvn/!svn/ver/1374/ros/gui_communications/msg_gen/lisp/gui_communications-msg.asd
+END
+_package_targetPosition.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/pandorasvn/!svn/ver/1374/ros/gui_communications/msg_gen/lisp/_package_targetPosition.lisp
+END
