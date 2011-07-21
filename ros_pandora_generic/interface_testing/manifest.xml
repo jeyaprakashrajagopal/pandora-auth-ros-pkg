@@ -1,0 +1,21 @@
+<package>
+  <description brief="interface_testing">
+
+    Utility Classes for testing ROS Node Interfaces
+
+  </description>
+  <author>Miltiadis Allamanis, Pelagia Amanatidou, Marina Stamatiadou</author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/interface_testing</url>
+  <depend package="roscpp"/>
+  <depend package="actionlib"/>
+  <depend package="diagnostic_updater"/>
+  
+   <export>
+	<cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib" />
+  </export>
+	
+</package>
+
+

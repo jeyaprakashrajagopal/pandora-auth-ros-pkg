@@ -1,0 +1,25 @@
+<package>
+  <description brief="interface_tester">
+
+     Interface Tests specific to the PANDORA platform
+
+  </description>
+  <author>Miltiadis Allamanis, Pelagia Amanatidou, Marina Stamatiadou</author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/interface_tester</url>
+  <depend package="roscpp"/>
+  <depend package="actionlib"/>
+  <depend package="actionlib_msgs"/>
+  <depend package="diagnostic_updater"/>
+  <depend package="stateManager"/>
+  <depend package="stateManager_communications"/>
+  <depend package="interface_testing"/>
+
+  <export>
+	<cpp cflags="-I${prefix}/src" lflags="-L${prefix}/lib" />
+  </export>
+
+</package>
+
+
