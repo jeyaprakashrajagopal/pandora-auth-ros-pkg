@@ -1,11 +1,11 @@
 <package>
   <description brief="gui">
 
-     gui
+     The PANDORA GUI package
 
   </description>
-  <author>pandora</author>
-  <license>BSD</license>
+  <author>Vitios Dimitris</author>
+  <license>MIT</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/gui</url>
   <depend package="roscpp"/>

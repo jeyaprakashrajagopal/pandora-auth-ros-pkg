@@ -1,11 +1,11 @@
 <package>
   <description brief="gui_communications">
 
-     gui_communications
+   	Communications Requirements for PANDORA GUI
 
   </description>
   <author>Dimitrios Vitsios</author>
-  <license>BSD</license>
+  <license>MIT</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/gui_communications</url>
 
