@@ -1,0 +1,5 @@
+<!--State Manager -->
+<launch>
+  <node name="stateServer" type="server" pkg="stateManager" respawn="true" />
+  <include file="$(find watchdog)/launch/watchdog.launch" />
+</launch>

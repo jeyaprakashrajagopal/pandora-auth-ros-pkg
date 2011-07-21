@@ -1,0 +1,20 @@
+<package>
+  <description brief="stateManager">
+
+     A simple State Manager
+
+  </description>
+  <author>Allamanis Miltiadis, Marina Stamadiadou</author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/stateManager</url>
+  <depend package="roscpp"/>
+  <depend package="stateManager_communications"/>
+  <depend package="diagnostic_updater"/>
+  <export>
+    <cpp cflags="-I${prefix}/src" lflags="-L${prefix}/lib"/>
+  </export>
+
+</package>
+
+

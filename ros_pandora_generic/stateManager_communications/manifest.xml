@@ -1,0 +1,14 @@
+<package>
+  <description brief="stateManager_communications">
+
+     Communications package for State Manager
+
+  </description>
+  <author>Pandora Robotics Team</author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/stateManager_communications</url>
+	
+</package>
+
+
