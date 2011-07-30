@@ -19,12 +19,18 @@
  *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *	THE SOFTWARE.
  */
-#include "remote_counter/remote_counter.h"
+#include "remote_counter/LimitedCounter.h"
 
 int main(int argc, char** argv) {
-	std::string name = "RemoteCounter";
+	std::string name = "Counter";
 	name = argv[1] + name;
 	ros::init(argc,argv,name);	
-	RemoteCounter g(argv[1]);
-	ros::spin();
+	if (argc >= 4) {
+		LimitedCounter g(argv[1], atoi(argv[2]),atoi(argv[3]));
+		ros::spin();
+	} else {
+		LimitedCounter g(argv[1], atoi(argv[2]),10);
+		ros::spin();
+	}
+	
 }

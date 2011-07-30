@@ -20,7 +20,7 @@
  *	THE SOFTWARE.
  */
 #include "ros/ros.h"
-#include "remote_counter.h"
+#include "RemoteCounter.h"
 #include "diagnostic_updater/diagnostic_updater.h"
 #include "diagnostic_updater/publisher.h"
 

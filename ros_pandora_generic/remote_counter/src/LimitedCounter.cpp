@@ -19,7 +19,7 @@
  *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *	THE SOFTWARE.
  */
-#include "remote_counter/limited_counter.h"
+#include "remote_counter/LimitedCounter.h"
 
 LimitedCounter::LimitedCounter(std::string name, int max, int activeSecs): 
 				_updater(), 
