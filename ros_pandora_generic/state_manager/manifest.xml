@@ -9,7 +9,7 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/stateManager</url>
   <depend package="roscpp"/>
-  <depend package="stateManager_communications"/>
+  <depend package="state_manager_communications"/>
   <depend package="diagnostic_updater"/>
   <export>
     <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib"/>

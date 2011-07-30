@@ -23,8 +23,8 @@
 #define STATE_SERVER
 
 #include "ros/ros.h"
-#include "stateManager_communications/robotModeMsg.h"
-#include "stateManager_communications/registerNodeSrv.h"
+#include "state_manager_communications/robotModeMsg.h"
+#include "state_manager_communications/registerNodeSrv.h"
 #include "diagnostic_updater/diagnostic_updater.h"
 
 #define NUM_OF_STATES 11
@@ -84,17 +84,17 @@ class StateServer {
 		/**
 		 * Client State information getter (callback)
 		 */
-		void clientStateInformation(const stateManager_communications::robotModeMsgConstPtr&);
+		void clientStateInformation(const state_manager_communications::robotModeMsgConstPtr&);
 		
 		/**
 		 * Register node to a new state
 		 */
-		void registerNodeTransition(const stateManager_communications::robotModeMsgConstPtr& msg);
+		void registerNodeTransition(const state_manager_communications::robotModeMsgConstPtr& msg);
 		
 		/**
 		 * Register a node.
 		 */
-		bool registerNode(stateManager_communications::registerNodeSrv::Request& rq,stateManager_communications::registerNodeSrv::Response &rs);
+		bool registerNode(state_manager_communications::registerNodeSrv::Request& rq,state_manager_communications::registerNodeSrv::Response &rs);
 		
 		/**
 		 * Send a transition request to all nodes

@@ -23,8 +23,8 @@
 #define STATE_CLIENT
 
 #include "ros/ros.h"
-#include "stateManager_communications/robotModeMsg.h"
-#include "stateManager_communications/registerNodeSrv.h"
+#include "state_manager_communications/robotModeMsg.h"
+#include "state_manager_communications/registerNodeSrv.h"
 
 class StateClient {
 	private:
@@ -46,7 +46,7 @@ class StateClient {
 		/**
 		 * Callback for receiving state info from server.
 		 */
-		void serverStateInformation(const stateManager_communications::robotModeMsgConstPtr&);
+		void serverStateInformation(const state_manager_communications::robotModeMsgConstPtr&);
 		
 		void clientRegister();
 	

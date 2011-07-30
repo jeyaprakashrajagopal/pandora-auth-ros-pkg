@@ -33,7 +33,7 @@
 
 StateClient::StateClient (bool doRegister)  : _nh() {
 	name = ros::this_node::getName();
-	_acknowledgePublisher = _nh.advertise<stateManager_communications::robotModeMsg>("/robot/state/server",5,true);
+	_acknowledgePublisher = _nh.advertise<state_manager_communications::robotModeMsg>("/robot/state/server",5,true);
 	_stateSubscriber = _nh.subscribe("/robot/state/clients",10, &StateClient::serverStateInformation, this);		
 	
 	if (doRegister)
@@ -47,10 +47,10 @@ void StateClient::clientRegister()
 		ROS_ERROR("[%s] Couldn't find service /robot/state/register", name.c_str());
 		ros::spinOnce();
 	}
-	_registerServiceClient = _nh.serviceClient<stateManager_communications::registerNodeSrv>
+	_registerServiceClient = _nh.serviceClient<state_manager_communications::registerNodeSrv>
 	("/robot/state/register");
 	
-	stateManager_communications::registerNodeSrv rq;
+	state_manager_communications::registerNodeSrv rq;
 	rq.request.nodeName = name;
 	
 	while (!_registerServiceClient.call(rq) && ros::ok())
@@ -67,10 +67,10 @@ void StateClient::transitionComplete(int newState){
 
 	ROS_INFO("[%s] Node Transition to state %i Completed",name.c_str(), newState);	
 
-	stateManager_communications::robotModeMsg msg;
+	state_manager_communications::robotModeMsg msg;
 	msg.nodeName = name;
 	msg.mode = newState;
-	msg.type = stateManager_communications::robotModeMsg::TYPE_ACK;
+	msg.type = state_manager_communications::robotModeMsg::TYPE_ACK;
 	_acknowledgePublisher.publish(msg);
 }
 
@@ -81,19 +81,19 @@ void StateClient::completeTransition(){
 void StateClient::transitionToState(int newState){
 
 	ROS_INFO("[%s] Requesting transition to state %i",name.c_str(), newState);	
-	stateManager_communications::robotModeMsg msg;
+	state_manager_communications::robotModeMsg msg;
 	msg.nodeName = name;
 	msg.mode = newState;
-	msg.type = stateManager_communications::robotModeMsg::TYPE_REQUEST;
+	msg.type = state_manager_communications::robotModeMsg::TYPE_REQUEST;
 	_acknowledgePublisher.publish(msg);
 	
 }
 
-void StateClient::serverStateInformation(const stateManager_communications::robotModeMsgConstPtr& msg) {
+void StateClient::serverStateInformation(const state_manager_communications::robotModeMsgConstPtr& msg) {
 	ROS_INFO("[%s] Received new information from state server",name.c_str());
-	if (msg->type == stateManager_communications::robotModeMsg::TYPE_TRANSITION) {
+	if (msg->type == state_manager_communications::robotModeMsg::TYPE_TRANSITION) {
 		startTransition(msg->mode);
-	} else if (msg->type == stateManager_communications::robotModeMsg::TYPE_START) {
+	} else if (msg->type == state_manager_communications::robotModeMsg::TYPE_START) {
 		completeTransition();
 	} else {
 		ROS_ERROR("[%s] StateClient received a new state command, that is not understandable",name.c_str());

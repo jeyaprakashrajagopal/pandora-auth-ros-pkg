@@ -39,7 +39,7 @@ StateServer::StateServer() : _nh() {
 	_transitioning = false;
 	
 	//Subcriber and Publisher declaration
-	_statePublisher = _nh.advertise<stateManager_communications::robotModeMsg>("/robot/state/clients",5,true);	
+	_statePublisher = _nh.advertise<state_manager_communications::robotModeMsg>("/robot/state/clients",5,true);	
 	_registerService = _nh.advertiseService("/robot/state/register", &StateServer::registerNode, this);
 	_acknowledgeSubscriber = _nh.subscribe("/robot/state/server",100, &StateServer::clientStateInformation, this);
 	
@@ -63,32 +63,32 @@ void StateServer::watchdog(const ros::TimerEvent&) {
 }
 
 void StateServer::setStateNames() {
-	stateNames[stateManager_communications::robotModeMsg::MODE_OFF] = "MODE_OFF";
-	stateNames[stateManager_communications::robotModeMsg::MODE_EXPLORATION] = "MODE_EXPLORATION";
-	stateNames[stateManager_communications::robotModeMsg::MODE_IDENTIFICATION] = "MODE_IDENTIFICATION";
-	stateNames[stateManager_communications::robotModeMsg::MODE_ARM_SCAN] = "MODE_ARM_SCAN";
-	stateNames[stateManager_communications::robotModeMsg::MODE_ARM_APPROACH] = "MODE_ARM_APPROACH";
-	stateNames[stateManager_communications::robotModeMsg::MODE_ARM_SEARCH_COMPLETE] = "MODE_ARM_SEARCH_COMPLETE";
-	stateNames[stateManager_communications::robotModeMsg::MODE_SEMI_AUTONOMOUS] = "MODE_SEMI_AUTONOMOUS";
-	stateNames[stateManager_communications::robotModeMsg::MODE_TELEOPERATED_LOCOMOTION] = "MODE_TELEOPERATED_LOCOMOTION";
-	stateNames[stateManager_communications::robotModeMsg::MODE_ARM_TELEOPERATION] = "MODE_ARM_TELEOPERATION";
-	stateNames[stateManager_communications::robotModeMsg::MODE_ARM_TELEOPERATION_TUCK] = "MODE_ARM_TELEOPERATION_TUCK";
-	stateNames[stateManager_communications::robotModeMsg::MODE_TERMINATING] = " MODE_TERMINATING";
+	stateNames[state_manager_communications::robotModeMsg::MODE_OFF] = "MODE_OFF";
+	stateNames[state_manager_communications::robotModeMsg::MODE_EXPLORATION] = "MODE_EXPLORATION";
+	stateNames[state_manager_communications::robotModeMsg::MODE_IDENTIFICATION] = "MODE_IDENTIFICATION";
+	stateNames[state_manager_communications::robotModeMsg::MODE_ARM_SCAN] = "MODE_ARM_SCAN";
+	stateNames[state_manager_communications::robotModeMsg::MODE_ARM_APPROACH] = "MODE_ARM_APPROACH";
+	stateNames[state_manager_communications::robotModeMsg::MODE_ARM_SEARCH_COMPLETE] = "MODE_ARM_SEARCH_COMPLETE";
+	stateNames[state_manager_communications::robotModeMsg::MODE_SEMI_AUTONOMOUS] = "MODE_SEMI_AUTONOMOUS";
+	stateNames[state_manager_communications::robotModeMsg::MODE_TELEOPERATED_LOCOMOTION] = "MODE_TELEOPERATED_LOCOMOTION";
+	stateNames[state_manager_communications::robotModeMsg::MODE_ARM_TELEOPERATION] = "MODE_ARM_TELEOPERATION";
+	stateNames[state_manager_communications::robotModeMsg::MODE_ARM_TELEOPERATION_TUCK] = "MODE_ARM_TELEOPERATION_TUCK";
+	stateNames[state_manager_communications::robotModeMsg::MODE_TERMINATING] = " MODE_TERMINATING";
 }
 
-void StateServer::clientStateInformation(const stateManager_communications::robotModeMsgConstPtr& msg) {
+void StateServer::clientStateInformation(const state_manager_communications::robotModeMsgConstPtr& msg) {
 	ROS_INFO("Received new msg from state client %s", msg->nodeName.c_str());
-	if (msg->type ==  stateManager_communications::robotModeMsg::TYPE_REQUEST) {
+	if (msg->type ==  state_manager_communications::robotModeMsg::TYPE_REQUEST) {
 		ROS_INFO("%s requested state transition to %i", msg->nodeName.c_str(),msg->mode);
 		sendTransitionRequest(msg->mode);
-	} else if (msg->type == stateManager_communications::robotModeMsg::TYPE_ACK) {
+	} else if (msg->type == state_manager_communications::robotModeMsg::TYPE_ACK) {
 		registerNodeTransition(msg);
 	} else {
 		ROS_ERROR("State Server received a state message, but it was not understandable.");
 	}
 }
 
-bool StateServer::registerNode(stateManager_communications::registerNodeSrv::Request& rq,stateManager_communications::registerNodeSrv::Response &rs) {
+bool StateServer::registerNode(state_manager_communications::registerNodeSrv::Request& rq,state_manager_communications::registerNodeSrv::Response &rs) {
 	stateNode node;
 	node.nodeName = rq.nodeName;
 	
@@ -103,7 +103,7 @@ bool StateServer::registerNode(stateManager_communications::registerNodeSrv::Req
 	return true;
 }
 
-void StateServer::registerNodeTransition(const stateManager_communications::robotModeMsgConstPtr& msg) {
+void StateServer::registerNodeTransition(const state_manager_communications::robotModeMsgConstPtr& msg) {
 	if (msg->mode != _currentState){
 		ROS_ERROR("Received and ACK from %s, but it transitioned to a wrong state", msg->nodeName.c_str()); 
 		return;
@@ -155,13 +155,13 @@ void StateServer::performNodeCensus() {
 }
 
 void StateServer::sendTransitionRequest(int newState) {
-	stateManager_communications::robotModeMsg msg;
+	state_manager_communications::robotModeMsg msg;
 	ROS_INFO("Changing system state to %i", newState);
 	_previousState = _currentState;
 	_currentState = newState;
 	msg.nodeName = "";
 	msg.mode = newState;
-	msg.type = stateManager_communications::robotModeMsg::TYPE_TRANSITION;
+	msg.type = state_manager_communications::robotModeMsg::TYPE_TRANSITION;
 	_statePublisher.publish(msg);	
 	_numOfNodesAcked = 0;
 	ROS_INFO("Informed all state clients for state change");
@@ -170,12 +170,12 @@ void StateServer::sendTransitionRequest(int newState) {
 }
 
 void StateServer::sendStart(int newState) {
-	stateManager_communications::robotModeMsg msg;
+	state_manager_communications::robotModeMsg msg;
 	_watchdog.stop(); //Disable watchdog
 	msg.nodeName = "";
 	msg.mode = newState;
 	_numOfNodesAcked = 0;
-	msg.type = stateManager_communications::robotModeMsg::TYPE_START;
+	msg.type = state_manager_communications::robotModeMsg::TYPE_START;
 	_statePublisher.publish(msg);
 	_transitioning = false;
 	statusNode();	
