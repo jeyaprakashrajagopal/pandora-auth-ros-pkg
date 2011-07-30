@@ -32,4 +32,4 @@ rosbuild_add_executable(server src/StateServer.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 rosbuild_add_library(StateClient src/StateClient.cpp)
 
-rosbuild_add_compile_flags(StateClient -I${PROJECT_SOURCE_DIR}/src/)
+rosbuild_add_compile_flags(StateClient -I${PROJECT_SOURCE_DIR}/include/)

@@ -29,7 +29,7 @@
  */
 
 
-#include "StateClient.h"
+#include "state_manager/StateClient.h"
 
 StateClient::StateClient (bool doRegister)  : _nh() {
 	name = ros::this_node::getName();
