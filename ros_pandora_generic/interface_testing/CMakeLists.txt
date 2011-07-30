@@ -36,4 +36,4 @@ rosbuild_genmsg()
 rosbuild_add_library(interface_tester src/InterfaceTester.cpp)
 
 rosbuild_add_library(generic_diagnostic include/interface_testing/GenericDiagnostic.cpp)
-rosbuild_add_executable(testClient src/testClient.cpp)
+rosbuild_add_executable(testClient src/TestClient.cpp)
