@@ -24,8 +24,8 @@
 
 #include "ros/ros.h"
 #include "gtest/gtest.h"
-#include "mockObjects/MockSubscriber.h"
-#include "mockObjects/MockActionServer.h"
+#include "mock_objects/MockSubscriber.h"
+#include "mock_objects/MockActionServer.h"
 
 #define PI 3.141592653589
 using ::testing::AtLeast;

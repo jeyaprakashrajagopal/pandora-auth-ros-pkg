@@ -15,7 +15,7 @@
   <depend package="slam_communications"/>
   <depend package="mainMotorControl_communications"/>
   <depend package="RoboticArm_communications"/>
-  <depend package="mockObjects"/>
+  <depend package="mock_objects"/>
   <depend package="std_msgs"/>
   <depend package="tf"/>
 

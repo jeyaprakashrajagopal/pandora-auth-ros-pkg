@@ -1,5 +1,5 @@
 <package>
-  <description brief="mockObjects">
+  <description brief="mock_objects">
 		
      Mock objects for representing subscribers, service servers and action libs, used for testing.
 
