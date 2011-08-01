@@ -21,7 +21,10 @@
  */
 #include "ros/ros.h"
 #include "remote_counter/countingSrv.h"
-
+		
+/**
+ * This class implements a remote counter that can be incremented and decremented remotely by other ROS Nodes.
+ */
 
 class RemoteCounter{
 	
