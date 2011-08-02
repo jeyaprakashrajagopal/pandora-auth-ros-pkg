@@ -2,7 +2,7 @@
 \mainpage
 \htmlinclude manifest.html
 
-\b remote_counter is ... 
+\b remote_counter is a package containing a ROS implementation of a counter node. The counter can be used either internally as a part of a ROS node or as a standalone node. LimitedCounter inherits the counter and their values are limited, so that when a limit is exceeded an error is produced at the diagnostic_updater. 
 
 <!-- 
 Provide an overview of your package.
