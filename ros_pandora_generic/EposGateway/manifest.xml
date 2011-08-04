@@ -1,0 +1,13 @@
+<package>
+  <description brief="EposGateway">
+	A ROS EPOS Gateway
+  </description>
+  <author>Serenis Charalampos</author>
+  <license>GPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/EposGateway</url>
+  <depend package="roscpp"/>
+
+</package>
+
+
