@@ -1,11 +1,11 @@
 <package>
   <description brief="gmock">
 
-     gmock
+     Google Mock Framework Wrapper for ROS
 
   </description>
-  <author>Miltiadis Allamanis</author>
-  <license>BSD</license>
+  <author>Google</author>
+  <license>Google</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/gmock</url>
   <depend package="roscpp"/>

@@ -1,6 +1,6 @@
 <package>
   <description brief="remote_mutex">
-		A remote mutex implementation for mutually exlusive access to nodes
+	A remote mutex implementation for mutually exlusive access to nodes
 
   </description>
   <author>Miltiadis Allamanis</author>
