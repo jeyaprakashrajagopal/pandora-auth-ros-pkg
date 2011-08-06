@@ -21,9 +21,9 @@
  */
 #include "interface_testing/InterfaceTester.h"
 #include "interface_testing/GenericDiagnostic.cpp"
-#include "StateClient.h"
+#include "state_manager/StateClient.h"
 
-using namespace stateManager_communications;
+using namespace state_manager_communications;
 
 class InterfaceDiagnostics: GenericDiagnostic, StateClient {
 	

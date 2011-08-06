@@ -12,8 +12,8 @@
   <depend package="actionlib"/>
   <depend package="actionlib_msgs"/>
   <depend package="diagnostic_updater"/>
-  <depend package="stateManager"/>
-  <depend package="stateManager_communications"/>
+  <depend package="state_manager"/>
+  <depend package="state_manager_communications"/>
   <depend package="interface_testing"/>
 
   <export>
