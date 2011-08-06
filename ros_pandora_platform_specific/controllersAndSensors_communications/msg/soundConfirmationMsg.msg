@@ -1,0 +1,4 @@
+Header header
+float32 victimProbability
+float32 victimConditionProbalility
+controllersAndSensors_communications/soundVictimConditionMsg victimCondition

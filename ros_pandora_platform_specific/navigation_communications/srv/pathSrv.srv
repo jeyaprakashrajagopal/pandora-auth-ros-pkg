@@ -1,0 +1,8 @@
+int32[] pointsx
+int32[] pointsy
+int32 pointsNum
+int32 priority
+uint8 semiAutonomous
+uint8 cameraAlert
+int32 index
+float32 angle

@@ -1,0 +1,15 @@
+<package>
+  <description brief="mainMotorControl_communications">
+
+     The mainMotorControl_communications defines main motor control messages and services
+
+  </description>
+  <author>Allamanis Miltiadis, Serenis Charalambos, Stamatiadou Marina, Sykoudi Pelagia </author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/mainMotorControl_communications</url>
+  <depend package= "interface_tester"/>
+
+</package>
+
+

@@ -1,0 +1,15 @@
+<package>
+  <description brief="RoboticArm_communications">
+
+     The RoboticArm_communications defines messages and actions for the Robotic Arm
+
+  </description>
+  <author>Stamadiadou Marina, Allamanis Miltiadis, Sykoudi Pelagia</author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/RoboticArm_communications</url>
+  <depend package="actionlib_msgs"/>
+
+</package>
+
+

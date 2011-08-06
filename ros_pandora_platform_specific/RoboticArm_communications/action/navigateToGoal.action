@@ -1,0 +1,19 @@
+# Goal
+uint32 state
+uint32 startScan=1
+uint32 startTracking=2
+uint32 startIdentify=3
+uint32 searchHole=4
+uint32 searchNextHole=5
+uint32 doNothing=6
+uint32 soundMode=7
+uint32 searchArea=8
+uint64 holeId
+float32 th
+float32 height
+int8 verticalDirection
+---
+# Result
+string done
+---
+# Feedback

@@ -1,0 +1,12 @@
+---
+int32 xsize
+int32 ysize
+uint8[] map
+uint8[] coverage
+int32[] victimsx
+int32[] victimsy
+int32[] hazmatx
+int32[] hazmaty
+uint8[] pattern
+int32[] rposesx
+int32[] rposesy

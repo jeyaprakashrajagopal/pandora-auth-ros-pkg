@@ -1,0 +1,14 @@
+<package>
+  <description brief="vision_communications">
+
+     The vision_communications package provides messages and services for Vision
+
+  </description>
+  <author>Stamadiadou Marina, Sykoudi Pelagia, Allamanis Miltiadis</author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/vision_communications</url>
+
+</package>
+
+

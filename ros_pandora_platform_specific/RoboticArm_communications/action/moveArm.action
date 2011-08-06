@@ -1,0 +1,28 @@
+# Goal
+float32 x
+float32 y
+float32 z
+float32 a
+float32 b
+float32 c
+float32 th5
+float32 th4
+float32 th1
+float32 linearStep
+uint8 motionType
+uint8 TYPE_ONLY_HEAD=1
+uint8 TYPE_GENERAL=2
+uint8 TYPE_TUCKARM=3
+uint8 TYPE_LINEAR=4
+uint8 TYPE_TH451=5
+uint8 gripperPosition
+uint8 TYPE_OPEN=1
+uint8 TYPE_CLOSE=2
+uint8 TYPE_STOPPED=3
+
+uint8 mutexMode
+---
+# Result
+uint8 error
+---
+# Feedback

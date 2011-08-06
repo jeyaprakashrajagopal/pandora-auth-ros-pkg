@@ -1,0 +1,5 @@
+float32 linearSpeed # in m/s
+float32 rotationalSpeed # in rad/s
+---
+mainMotorControl_communications/motorErrorMsg error
+

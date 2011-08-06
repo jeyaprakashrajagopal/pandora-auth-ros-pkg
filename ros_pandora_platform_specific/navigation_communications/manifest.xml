@@ -1,0 +1,14 @@
+<package>
+  <description brief="navigation_communications">
+
+     The navigation_communications package defines messages and services for navigation.
+
+  </description>
+  <author>Stamadiadou Marina, Allamanis Miltiadis, Sykoudi Pelagia</author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/navigation_communications</url>
+
+</package>
+
+
