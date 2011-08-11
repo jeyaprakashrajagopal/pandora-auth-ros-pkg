@@ -24,7 +24,7 @@
  * given a specific node name
  */
 
-#include "interface_testing/testClient.h"
+#include "interface_testing/TestClient.h"
 
 /**
  * The constructor method

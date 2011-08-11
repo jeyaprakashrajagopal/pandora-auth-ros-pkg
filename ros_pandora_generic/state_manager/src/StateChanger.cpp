@@ -19,13 +19,6 @@
  *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *	THE SOFTWARE.
  */
-/** 
- * File Description State Manager - The main method for changing states
- * Author: Group 0
- * Date: 15 April 2011
- * Change History: -
- */
-
 
 #include "state_manager/StateClient.h"
 

@@ -21,7 +21,11 @@
  */
 #include "interface_testing/InterfaceTester.h"
 #include "interface_testing/GenericDiagnostic.cpp"
+
 #include "state_manager/StateClient.h"
+
+//#include "InterfaceDiagnostic.h"
+
 
 using namespace state_manager_communications;
 

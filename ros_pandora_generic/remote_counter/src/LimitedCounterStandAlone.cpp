@@ -20,7 +20,9 @@
  *	THE SOFTWARE.
  */
 #include "remote_counter/LimitedCounter.h"
-
+/**
+ * The main class
+ */
 int main(int argc, char** argv) {
 	std::string name = "Counter";
 	name = argv[1] + name;

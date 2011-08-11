@@ -19,13 +19,6 @@
  *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *	THE SOFTWARE.
  */
-/** 
- * File Description <Watchdog Header File>
- * Author: Allamanis M.
- * Date: 2 May 2011
- * Change History: -
- */
-
 #ifndef WATCHDOG_H
 #define WATCHDOG_H
 

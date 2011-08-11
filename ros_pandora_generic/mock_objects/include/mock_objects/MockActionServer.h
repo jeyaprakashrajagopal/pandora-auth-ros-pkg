@@ -23,27 +23,46 @@
 #define MOCK_ACTION_SERVER_H
 
 
-#include "gmock/gmock.h"  // Brings in Google Mock.
+#include "gmock/gmock.h"  
 #include "gtest/gtest.h"
 #include "ros/ros.h"
 #include <actionlib/server/simple_action_server.h>
 
-#define MOCK_ACTION_SERVER(name,type) 									\
+#define MOCK_ACTION_SERVER(name,type) 	\
+	/**
+	 * An pure abstract interface to an action server.
+	 */									
 class name##ActionServer { 												\
 																		\
 	private:															\
-																		\
+	/**
+	 * ROS Node Handle.
+	 */																	\
 	ros::NodeHandle _nh;												\
-																		\
+	/**
+	 * The action name.
+	 */																	\
 	std::string _actionName;											\
-																		\
+	/**
+	 * The declaration of the actionlib
+	 */																	\
 	actionlib::SimpleActionServer<type##Action> _action;				\
 																		\
 	public:																\
+	/**
+	 * The object constructor.
+	 * @param name the name of the action that the tested server
+	 * 				is being called.
+	 */											
 	name##ActionServer(std::string name);								\
+	/**
+	 * Destructor
+	 */	
 	virtual ~name##ActionServer() {};									\
-																		\
-	virtual void ActionServerCallback(const type##GoalConstPtr &goal) = 0; \
+	/**
+	* Abstract function to actionServer callback
+	*/																	\
+	virtual void actionServerCallback(const type##GoalConstPtr &goal) = 0; \
 																		\
 };																		\
 																		\
@@ -52,15 +71,17 @@ name##ActionServer::name##ActionServer(std::string name) : _action(name, false)	
 	_actionName = name;													\
 	_action.start();													\
 }																		\
-																		\
+/**
+ * The Google Mock ActionServer.
+ */																		\
 class Mock##name##ActionServer : public name##ActionServer {			\
 																		\
 	public:																\
 																		\
 	Mock##name##ActionServer(std::string actionName) : name##ActionServer(actionName) {}; \
-																\
-	MOCK_METHOD1(ActionServerCallback, void(const type##GoalConstPtr &goal)); \
-																\
+																		\
+	MOCK_METHOD1(actionServerCallback, void(const type##GoalConstPtr &goal)); \
+																		\
 };																
 
 #endif

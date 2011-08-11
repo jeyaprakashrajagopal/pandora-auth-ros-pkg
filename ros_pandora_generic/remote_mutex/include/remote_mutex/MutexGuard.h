@@ -25,7 +25,7 @@
 #include "remote_mutex/mutexSrv.h"
 
 /**
- * Impements a remote mutex guard.
+ * This class impements a remote mutex guard.
  */
 class MutexGuard {
 	private:

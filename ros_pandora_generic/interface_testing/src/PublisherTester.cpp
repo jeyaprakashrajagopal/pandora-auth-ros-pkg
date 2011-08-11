@@ -27,6 +27,7 @@ PublisherTester<MessageType>::PublisherTester(std::string name, std::string acti
 	_testTimer = nh.createTimer(ros::Duration(0.3), &PublisherTester::testTimer, this);
 	_testTimer.stop();
 	_testPublisher.start();
+	//Set Values
 	testStarted = false;
 	received = false;
     actionTopic = actionName;
