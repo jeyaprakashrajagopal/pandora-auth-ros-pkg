@@ -28,39 +28,32 @@
 #include "ros/ros.h"
 #include <actionlib/server/simple_action_server.h>
 
-#define MOCK_ACTION_SERVER(name,type) 	\
-	/**
-	 * An pure abstract interface to an action server.
-	 */									
+#define MOCK_ACTION_SERVER(name,type) 									/**																	
+	 * An pure abstract interface to an action server.					
+	 */																	\
 class name##ActionServer { 												\
 																		\
-	private:															\
-	/**
-	 * ROS Node Handle.
+	private:																/**																	
+	 * ROS Node Handle.													
 	 */																	\
-	ros::NodeHandle _nh;												\
-	/**
-	 * The action name.
+	ros::NodeHandle _nh;													/**																	
+	 * The action name.													
 	 */																	\
-	std::string _actionName;											\
-	/**
-	 * The declaration of the actionlib
+	std::string _actionName;												/**																	
+	 * The declaration of the actionlib									
 	 */																	\
 	actionlib::SimpleActionServer<type##Action> _action;				\
 																		\
-	public:																\
-	/**
-	 * The object constructor.
-	 * @param name the name of the action that the tested server
-	 * 				is being called.
-	 */											
-	name##ActionServer(std::string name);								\
-	/**
-	 * Destructor
-	 */	
-	virtual ~name##ActionServer() {};									\
-	/**
-	* Abstract function to actionServer callback
+	public:																	/**																	
+	 * The object constructor.											
+	 * @param name the name of the action that the tested server		
+	 * 				is being called.									
+	 */																	\
+	name##ActionServer(std::string name);									/**																	
+	 * Destructor														
+	 */																	\
+	virtual ~name##ActionServer() {};										/**																	
+	* Abstract function to actionServer callback						
 	*/																	\
 	virtual void actionServerCallback(const type##GoalConstPtr &goal) = 0; \
 																		\
@@ -70,9 +63,8 @@ name##ActionServer::name##ActionServer(std::string name) : _action(name, false)	
 {																		\
 	_actionName = name;													\
 	_action.start();													\
-}																		\
-/**
- * The Google Mock ActionServer.
+}																		 /**																	
+ * The Google Mock ActionServer.										
  */																		\
 class Mock##name##ActionServer : public name##ActionServer {			\
 																		\
