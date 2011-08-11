@@ -21,7 +21,7 @@
  */
 #include "remote_counter/LimitedCounter.h"
 /**
- * The main class
+ * The main 
  */
 int main(int argc, char** argv) {
 	std::string name = "Counter";
