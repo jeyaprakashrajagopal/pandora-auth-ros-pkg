@@ -19,15 +19,6 @@
  *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *	THE SOFTWARE.
  */
-/** 
- * File Description: State Manager - Client Implementation
- * Contents: Methods for implementing nodes as clients for changing
- * 			 states of operation 			 
- * Author: Group 0
- * Date: 15 April 2011
- * Change History: -
- */
-
 
 #include "state_manager/StateClient.h"
 

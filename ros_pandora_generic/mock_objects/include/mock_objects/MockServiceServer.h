@@ -22,7 +22,7 @@
 #ifndef MOCK_SERVICE_SERVER_H
 #define MOCK_SERVICE_SERVER_H
 
-#include "gmock/gmock.h"  // Brings in Google Mock.
+#include "gmock/gmock.h" 
 #include "gtest/gtest.h"
 #include "ros/ros.h"
 #include "std_srvs/Empty.h"
@@ -64,9 +64,9 @@ class SimpleServiceServer {
    virtual ~SimpleServiceServer() {};
    
   /**
-   * Declaration of service callback
-   */
-  virtual bool ServiceServerCallback(MReq& rq, MRes& rs) = 0;
+	* Abstract function to serviceServer callback
+	*/	
+  virtual bool serviceServerCallback(MReq& rq, MRes& rs) = 0;
   
 };
 
@@ -80,7 +80,7 @@ SimpleServiceServer<MReq, MRes>::SimpleServiceServer(std::string name)
 
 
 /**
- * The Mock Server.
+ * The Google Mock Server.
  */
 template <typename MReq, typename MRes>
 class MockServiceServer : public SimpleServiceServer<MReq, MRes> {
@@ -89,7 +89,7 @@ class MockServiceServer : public SimpleServiceServer<MReq, MRes> {
 	
 	MockServiceServer(std::string serviceName):SimpleServiceServer<MReq, MRes>(serviceName) {};
 	
-	MOCK_METHOD2_T(ServiceServerCallback, bool(MReq& rq, MRes& rs));
+	MOCK_METHOD2_T(serviceServerCallback, bool(MReq& rq, MRes& rs));
 };
 
 #endif

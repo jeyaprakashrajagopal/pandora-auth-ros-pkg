@@ -19,12 +19,6 @@
  *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *	THE SOFTWARE.
  */
-/** 
- * File Description <Watchdog Implementation>
- * Author: Allamanis M.
- * Date: 2 May 2011
- * Change History: -
- */
 #include "watchdog_timer/Watchdog.h"
 
 Watchdog::Watchdog(std::string wdtName, ros::Duration duration) {

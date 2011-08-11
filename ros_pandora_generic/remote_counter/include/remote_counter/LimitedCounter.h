@@ -23,7 +23,9 @@
 #include "RemoteCounter.h"
 #include "diagnostic_updater/diagnostic_updater.h"
 #include "diagnostic_updater/publisher.h"
-
+	/**
+	* This class implements a limited counter that can indicate the loss of messages or invalid calls
+	*/
 class LimitedCounter {
 	
 	ros::NodeHandle _nh;

@@ -20,10 +20,7 @@
  *	THE SOFTWARE.
  */
 /** 
- * File Description State Manager - Server Implementation
- * Author: Group 0
- * Date: 15 April 2011
- * Change History: -
+ *State Manager - Server Implementation
  */
 
 #include "state_manager/StateServer.h"

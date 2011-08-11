@@ -26,6 +26,10 @@
 #include "state_manager_communications/robotModeMsg.h"
 #include "state_manager_communications/registerNodeSrv.h"
 
+/**
+ * This class uses methods for implementing nodes as clients for changing states of operation
+ */
+
 class StateClient {
 	private:
 		/**
