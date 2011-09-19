@@ -27,28 +27,7 @@
   */
 
 #define QT_NO_KEYWORDS
-/*#include "moveArmGui.h"
-#include "signalslib.hpp"
-#include <QApplication>
-#include "masterGui.h"
-#include "mainMotorStateGui.h"
-#include "setVehicleSpeedGui.h"
-#include "setVecSpeedThread.h"
-#include "irGui.h"
-#include "sonarGui.h"
-#include "co2Gui.h"
-#include "thermalGui.h"
-#include "butterflyGui.h"
-#include "debugText.h"
-#include "stateManagerGui.h"
-#include "victimsFound.h"
-#include "mapThread.h"
-#include "sensorsThread.h"
-#include "videoStreamThread.h"
-#include "displayVideo.h"
-#include "mapStreamThread.h"
-#include "displayMap.h"
-#include "videoStreaming.h"*/
+
 #include "setVecSpeedThread.h"
 #include "sensorsThread.h"
 #include "videoStreamThread.h"
@@ -66,7 +45,6 @@ QString curFolderString;
 
 int main(int argc, char *argv[])
 {
-	//ros::init(argc,argv,"gui");
 	
 	QApplication app(argc, argv);
 	
